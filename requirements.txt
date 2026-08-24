@@ -1,0 +1,7 @@
+
+pymupdf
+pymupdf4llm
+sentence-transformers
+faiss-cpu
+gradio
+numpy
