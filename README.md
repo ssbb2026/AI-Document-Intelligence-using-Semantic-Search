@@ -110,9 +110,9 @@ The Markdown document is divided into structure-aware chunks.
 Each chunk represents a meaningful section of the document rather than an arbitrary piece of text.
 
 Markdown
-   ↓
+ → 
 Headings / Sections
-   ↓
+ → 
 Meaningful Chunks
 4. Generate Embeddings
 
@@ -124,9 +124,9 @@ Text Chunk → Sentence Transformer → Vector
 The generated vectors are stored in a FAISS index for efficient similarity search.
 
 Document Chunks
-      ↓
+→ 
 Embeddings
-      ↓
+→ 
 FAISS Index
 6. Search
 
@@ -135,17 +135,19 @@ When the user submits a query, the query is converted into an embedding using th
 FAISS then compares the query vector against the indexed document vectors and returns the closest matches.
 
 User Query
-    ↓
+→ 
 Query Embedding
-    ↓
+→ 
 FAISS Similarity Search
-    ↓
+→ 
 Top Relevant Chunks
+
 Installation
 
 Clone the repository:
 
 git clone <repository-url>
+
 cd <repository-directory>
 
 Create a virtual environment:
@@ -175,17 +177,17 @@ Using the Gradio Interface
 The typical workflow is:
 
 Upload PDF
-    ↓
+    → 
 Process Document
-    ↓
+    → 
 Create Chunks
-    ↓
+    → 
 Generate Embeddings
-    ↓
+    → 
 Build FAISS Index
-    ↓
+    → 
 Enter Search Query
-    ↓
+    → 
 Retrieve Relevant Results
 
 For example, after uploading a technical PDF, a user could search:
@@ -201,17 +203,25 @@ A possible project structure is:
 project/
 │
 ├── app.py                  # Gradio application
+
 ├── requirements.txt        # Python dependencies
+
 ├── README.md               # Project documentation
+
 │
 ├── data/
 │   └── documents/          # PDF documents
+
 │
 ├── src/
 │   ├── pdf_processor.py    # PDF extraction
+
 │   ├── chunker.py          # Structure-aware chunking
+
 │   ├── embeddings.py       # Embedding generation
+
 │   ├── vector_store.py     # FAISS index management
+
 │   └── retriever.py        # Semantic retrieval
 │
 └── indexes/
@@ -226,36 +236,45 @@ The complete retrieval process can be summarized as:
                  ┌──────────────┐
                  │     PDF      │
                  └──────┬───────┘
+                       
                         ↓
                ┌─────────────────┐
                │  PyMuPDF4LLM    │
                └────────┬────────┘
+                        
                         ↓
                  ┌────────────┐
                  │  Markdown  │
                  └─────┬──────┘
+                       
                        ↓
              ┌────────────────────┐
              │ Structure-Aware    │
              │ Chunking            │
              └─────────┬──────────┘
+                      
                        ↓
              ┌────────────────────┐
              │ Sentence           │
              │ Transformers       │
              └─────────┬──────────┘
+                     
                        ↓
                 ┌─────────────┐
                 │ Embeddings  │
                 └──────┬──────┘
+                     
                        ↓
                   ┌─────────┐
                   │  FAISS  │
                   └────┬────┘
+                       
                        ↓
                 Semantic Search
+                      
                        ↓
                 Relevant Chunks
+                       
                        ↓
                 Gradio Interface
 Requirements
@@ -274,6 +293,7 @@ pip install -r requirements.txt
 
 
 Advantages
+
 Retrieves information based on semantic meaning rather than exact keyword matching.
 Preserves document structure during chunking.
 Supports metadata associated with retrieved content.
@@ -314,27 +334,4 @@ Company knowledge bases
 Internal documentation search
 Large PDF collections
 Question answering pipelines
-Example
-Query:
-"What are the system's authentication requirements?"
-
-        ↓
-
-Query Embedding
-
-        ↓
-
-FAISS Similarity Search
-
-        ↓
-
-Top Matching Chunks
-
-        ↓
-
-Metadata + Relevant Text
-
-        ↓
-
-Displayed in Gradio
 
