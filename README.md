@@ -14,6 +14,7 @@ short_description: AI Document Intelligence using Semantic Search
 # AI-Document-Intelligence-using-Semantic-Search
 AI Document Intelligence using Semantic Search
 
+Project Link:https://huggingface.co/spaces/ssbb2026/AIDocIntelligence
 
 An AI-powered document retrieval system that extracts content from PDF documents, converts the content into structure-aware chunks, generates semantic embeddings, and retrieves the most relevant information using FAISS vector search.
 
