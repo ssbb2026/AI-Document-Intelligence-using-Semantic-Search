@@ -1,5 +1,5 @@
 ---
-title: Doc
+title: ssbb2026/AIDocIntelligence
 emoji: 🫡
 colorFrom: gray
 colorTo: green
@@ -8,7 +8,7 @@ sdk_version: 6.25.0
 python_version: '3.12'
 app_file: app.py
 pinned: false
-short_description: AI Doc
+short_description: AI Document Intelligence using Semantic Search
 ---
 
 # AI-Document-Intelligence-using-Semantic-Search
